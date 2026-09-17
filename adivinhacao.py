@@ -18,3 +18,5 @@ while True:
     else:
         print(f"Got it in {guesses} guesses")
         break
+
+    # criar um commit apenas para testar a conexão com o GitHub
