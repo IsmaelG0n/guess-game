@@ -2,9 +2,10 @@ import random
 
 secret = random.randint (1, 100)
 guesses = 0
+max_attempts = 7
 
 # Sistema para adivinhar o número
-while True:
+while guesses < max_attempts:
 
     guess = int(input("Guess a number (1-100): "))
     guesses += 1
@@ -19,4 +20,5 @@ while True:
         print(f"Got it in {guesses} guesses")
         break
 
-    # criar um commit apenas para testar a conexão com o GitHub
+else:
+    print(f"You've used all {max_attempts} guesses. The secret number was {secret}.")
