@@ -25,13 +25,15 @@ max_attempts = 7
 # Looping para adivinhar o número
 while guesses < max_attempts:
 
-    try:
+    try: #validar que o input não seja uma letra ou um número decimal, apenas inteiro positivo.
         guess = int(input(f"Guess a number (1-{max_number}): "))
+
     except ValueError:
         print("Please enter a valid number.")
+
         continue
 
-    if guess < 1 or guess > max_number:
+    if guess < 1 or guess > max_number: # Se o numero for menor ou maior que o limite do jogo, ele não conta como tentativa e o jogador é avisado.
          print (
               f"This number is not part of the game. "
               f"Try again! You still have "
@@ -39,8 +41,21 @@ while guesses < max_attempts:
          )
          continue
 
-    guesses += 1
+    guesses += 1 # contador de tentativas
 
+    difference = abs(secret - guess) # diferença entre o palpite e o número secreto
+
+    if guess != secret:
+
+        if difference <= 5:
+            print ("Very hot!")
+
+        elif difference <= 10:
+            print ("Warm!")
+
+        else:
+            print ("Cold!")
+    
     if guess < secret:
         print("Too low")
 
