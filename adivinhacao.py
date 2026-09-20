@@ -45,7 +45,7 @@ while guesses < max_attempts:
 
     difference = abs(secret - guess) # diferença entre o palpite e o número secreto
 
-    if guess != secret:
+    if guess != secret: # garante que o feedback é dado apenas quando o jogador erra o palpite.
 
         if difference <= 5:
             print ("Very hot!")
@@ -63,7 +63,11 @@ while guesses < max_attempts:
         print("Too high")
 
     else:
+
+        score = 110 - (guesses * 10) # pontuação baseada no número de tentativas
         print(f"Got it in {guesses} guesses")
+        print(f"Your score is {score} points.")
+
         break
 
 else:
