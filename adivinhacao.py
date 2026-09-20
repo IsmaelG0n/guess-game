@@ -1,7 +1,13 @@
 import random
 
 #adicionar a escolha de dificuldade antes de iniciar o game.
-difficulty = input ("Easy, Medium or Hard?").lower()
+while True:
+    difficulty = input("Easy, Medium or Hard?: ").lower()
+
+    if difficulty in ["easy", "medium", "hard"]:
+        break
+
+    print ("Invalid options. Please choose Easy, Medium or Hard.")
 
 if difficulty == "easy":
         max_number = 50
@@ -19,7 +25,11 @@ max_attempts = 7
 # Looping para adivinhar o número
 while guesses < max_attempts:
 
-    guess = int(input(f"Guess a number (1-{max_number}): "))
+    try:
+        guess = int(input(f"Guess a number (1-{max_number}): "))
+    except ValueError:
+        print("Please enter a valid number.")
+        continue
 
     if guess < 1 or guess > max_number:
          print (
