@@ -1,5 +1,7 @@
 import random
 
+best_score = 0
+
 while True: # inserindo o loop para que o jogador possa jogar novamente.
 
     #adicionar a escolha de dificuldade antes de iniciar o game.
@@ -70,6 +72,10 @@ while True: # inserindo o loop para que o jogador possa jogar novamente.
             print(f"Got it in {guesses} guesses")
             print(f"Your score is {score} points.")
 
+            if score > best_score:
+                best_score = score
+                print (f"New best score: {best_score}")
+
             break
 
     else:
@@ -80,3 +86,5 @@ while True: # inserindo o loop para que o jogador possa jogar novamente.
     if play_again != "y":
         print("Thanks for playing!")
         break
+
+
