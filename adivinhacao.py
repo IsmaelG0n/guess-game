@@ -1,6 +1,13 @@
 import random
 
-best_score = 0
+with open("record.txt", "r") as file:
+    best_score = int(file.read())
+
+    if best_score == 0:
+        print ("No record yet. Be the first to set a record!")
+
+    else:
+        print (f"The best score is {best_score} points.")
 
 while True: # inserindo o loop para que o jogador possa jogar novamente.
 
@@ -74,6 +81,10 @@ while True: # inserindo o loop para que o jogador possa jogar novamente.
 
             if score > best_score:
                 best_score = score
+
+                with open("record.txt", "w") as file:
+                    file.write(str(best_score))
+
                 print (f"New best score: {best_score}")
 
             break
