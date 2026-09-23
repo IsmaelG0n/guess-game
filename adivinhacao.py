@@ -75,7 +75,11 @@ while True: # inserindo o loop para que o jogador possa jogar novamente.
 
         else:
 
-            score = 110 - (guesses * 10) # pontuação baseada no número de tentativas
+            def calculate_score(guesses):
+                return 110 - (guesses * 10)
+            
+            score = calculate_score(guesses) # pontuação baseada no número de tentativas
+            
             print(f"Got it in {guesses} guesses")
             print(f"Your score is {score} points.")
 
